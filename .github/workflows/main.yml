@@ -1,11 +1,13 @@
 name: Check Uptime
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
 
 jobs:
-  ping:
+  uptime_check:
+    name: Uptime Check
     runs-on: ubuntu-latest
     steps:
       - name: Check endpoint
